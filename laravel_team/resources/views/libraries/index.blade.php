@@ -1,11 +1,50 @@
 @extends('layouts_.app')
 @section('content')
     <style>
-        #add{background: blue;color: white;border-radius: 2vh;}
-        #radius{border-radius: 2vh;}
-        #let{color:black;}
-        #color {color: darkblue;}
+        #add{
+            color: white;
+            background-color: #2424b1;
+            border-radius: 2vh;
+            font-size: 16px;
+            border: 2px solid transparent;
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+            width: 20vh; height: 6vh;}
+        #add:hover{
+            background-color: white !important; color: darkblue;
+            border-color: darkblue;}
+        #th{
+            color: darkblue}
+        #td{
+            color: black;}
+        #show{background: #5d5757;
+            color: white;
+            width: 13vh;
+            border-radius: 2vh;}
+        #show:hover{
+            background-color: white;
+            color: grey; border-color: #575454;}
+        #edit{background: darkgoldenrod;
+            color: white;
+            border-radius: 2vh;
+            width: 13vh;
+            font-size: 16px;
+            text-align: center}
+        #edit:hover{
+            background-color: white;
+            color: darkgoldenrod;
+            border-color: darkgoldenrod;}
+        #delete{
+            background: #970a0a;
+            color: white;
+            width: 13vh;
+            border-radius: 2vh;}
+        #delete:hover{
+            background-color: white;
+            color: darkred;
+            border-color: darkred;
+        }
     </style>
+
     <div class="container">
         <h1 style="color:darkblue">Library List</h1>
 
@@ -13,32 +52,32 @@
         <table class="table table-bordered">
             <thead>
             <tr>
-                <th id="color">#</th>
-                <th id="color">Name</th>
-                <th id="color">Place</th>
-                <th id="color">Type</th>
-                <th id="color">Year_open</th>
-                <th id="color">Count_books</th>
+                <th id="th">#</th>
+                <th id="th">Name</th>
+                <th id="th">Place</th>
+                <th id="th">Type</th>
+                <th id="th">Year_open</th>
+                <th id="th">Count_books</th>
             </tr>
             </thead>
             <tbody>
             @foreach ($libraries as $library)
                 <tr>
-                    <td id="let"><b>{{$loop->iteration}}</b></td>
-                    <td id="let"><b>{{ $library->name }}</b></td>
-                    <td id="let"><b>{{ $library->place }}</b></td>
-                    <td id="let"><b>{{ $library->type }}</b></td>
-                    <td id="let"><b>{{ $library->year_open}}</b></td>
-                    <td id="let"><b>{{ $library->count_books }}</b></td>
+                    <td id="td"><b>{{$loop->iteration}}</b></td>
+                    <td id="td"><b>{{ $library->name }}</b></td>
+                    <td id="td"><b>{{ $library->place }}</b></td>
+                    <td id="td"><b>{{ $library->type }}</b></td>
+                    <td id="td"><b>{{ $library->year_open}}</b></td>
+                    <td id="td"><b>{{ $library->count_books }}</b></td>
 
                     <td>
-                        <a href="{{ route('libraries.show',$library) }}" id="radius" class="btn btn" style="background: grey;color: white;"><b>Show</b></a>
-                        <a href="{{ route('libraries.edit',$library) }}" id="radius" class="btn btn" style="background: #fac737;color: black;"><b>Edit</b></a>
+                        <a href="{{ route('libraries.show',$library) }}" id="show" class="btn btn" ><b>Show</b></a>
+                        <a href="{{ route('libraries.edit',$library) }}" id="edit" class="btn btn" ><b>Edit</b></a>
                         <form action="{{route('libraries.destroy', $library) }}" method="POST"
                               style="display: inline-block;">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" id="radius" class="btn btn" style="background: red;color: white;"><b>Delete</b></button>
+                            <button type="submit" id="delete" class="btn btn" ><b>Delete</b></button>
                         </form>
                     </td>
                 </tr>

@@ -1,12 +1,22 @@
 @extends('layouts_.app')
-
 @section('content')
-
     <style>
-        #hh{color:darkblue;}
         #th{color: black;}
-        #td{color:blue;}
-        #back{color: white;background: grey;border-radius: 2vh;}
+        #td{color: #550655}
+        #hh{color: darkblue;}
+        #back{border-radius: 2vh;
+            background: grey;
+            color: white;
+            width: 9.7vh;
+            height: 5.9vh;
+            font-size: 16px;
+            text-align: center
+        }
+        #back:hover{
+            background-color: white;
+            color: grey;
+            border-color: #575454;
+        }
     </style>
     <h1 id="hh">Show Registration</h1>
     <table class="table table-striped">
