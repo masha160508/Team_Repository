@@ -218,20 +218,7 @@
                         <div class="drop-down dropdown-profile animated fadeIn dropdown-menu">
                             <div class="dropdown-content-body">
                                 <ul>
-                                    <li>
-                                        <a href="{{asset('app-profile.html')}}"><i class="icon-user"></i> <span>Profile</span></a>
-                                    </li>
-                                    <li>
-                                        <a href="{{asset('javascript:void()')}}">
-                                            <i class="icon-envelope-open"></i> <span>Inbox</span> <div class="badge gradient-3 badge-pill gradient-1">3</div>
-                                        </a>
-                                    </li>
-
-
-                                    <li>
-                                        <a href="{{asset('page-lock.html')}}"><i class="icon-lock"></i> <span>Lock Screen</span></a>
-                                    </li>
-                                    <li><a href="{{asset('page-login.html')}}"><i class="icon-key"></i> <span>Logout</span></a></li>
+                                    <li><a href="{{asset('dashboard')}}"><i class="icon-key"></i> <span>Logout</span></a></li>
                                 </ul>
                             </div>
                         </div>
@@ -256,11 +243,7 @@
                         <i class="icon-note menu-icon"></i><span class="nav-text">Forms</span>
                     </a>
                     <ul aria-expanded="false">
-                        <li><a href="{{asset('./form-basic.html')}}">Basic Form</a></li>
-                        <li><a href="{{asset('./form-validation.html')}}">Form Validation</a></li>
-                        <li><a href="{{asset('./form-step.html')}}">Step Form</a></li>
-                        <li><a href="{{asset('./form-editor.html')}}">Editor</a></li>
-                        <li><a href="{{asset('./form-picker.html')}}">Picker</a></li>
+                        <li><a href="{{asset('register')}}">Register</a></li>
                     </ul>
                 </li>
                 <li class="nav-label">Table</li>
@@ -279,15 +262,7 @@
                         <li><a href="{{route('reviews.index')}}" aria-expanded="false">Reviews</a></li>
                     </ul>
                 </li>
-                <li class="nav-label">Pages</li>
-                <li>
-                    <a class="has-arrow" href="{{asset('javascript:void()')}}" aria-expanded="false">
-                        <i class="icon-notebook menu-icon"></i><span class="nav-text">Pages</span>
-                    </a>
-                    <ul aria-expanded="false">
-                        <li><a href="{{asset('./page-register.html')}}">Register</a></li>
 
-            </ul>
         </div>
     </div>
     <!--**********************************
@@ -314,7 +289,7 @@
                     @yield('content')
 
 
-                    <h1>Electronic Library</h1>
+                    <h1 style="">Electronic Library</h1>
 
 
 

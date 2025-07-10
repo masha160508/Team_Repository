@@ -27,7 +27,6 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__.'/auth.php';
 
-
 Route::resource('books', BookController::class);
 Route::resource('category', CategoryController::class);
 Route::resource('users', UserController::class);
