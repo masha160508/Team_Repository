@@ -1,11 +1,45 @@
 @extends('layouts_.app')
-
 @section('content')
     <style>
-     #hh{color: darkblue;}
-     #pole{width: 50vh;border-radius: 2vh;color: blue;}
-    #lop{color: black;}
-    #back{border-radius: 2vh;background: grey;color: white;}
+        #hh{color: darkblue;}
+        #pole{width: 50vh;border-radius: 2vh;color: darkblue;}
+        #pole:hover{
+            background-color: white !important;
+            color: darkblue;
+            border-color: darkblue;
+            box-shadow: 0 0 20px rgba(0, 14, 139, 0.86);
+        }
+        #lop{color: black;}
+        #back{border-radius: 2vh;
+            background: grey;
+            color: white;
+            width: 9.7vh;
+            height: 6vh;
+            font-size: 16px;
+            text-align: center
+        }
+        #back:hover{
+            background-color: white;
+            color: grey;
+            border-color: #575454;
+        }
+        #save {
+            border-radius: 2vh;
+            background-color: darkblue;
+            font-size: 16px;
+            color: white;
+            border: 2px solid transparent;
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+            width: 10vh;
+            height: 6vh;
+        }
+
+        #save:hover {
+            background-color: white !important;
+            color: darkblue;
+            border-color: darkblue;
+            box-shadow: 0 0 20px darkblue;
+        }
     </style>
     <div class="container">
         <h1 id="hh">Add New Employee</h1>
@@ -41,7 +75,7 @@
             </div>
             <div class="form-group">
                 <label id="lop"><b>Phone</b></label>
-                <input type="number" name="phone" class="form-control" value="{{old('phone')}}" id="pole">
+                <input type="text" name="phone" class="form-control" value="{{old('phone')}}" id="pole">
             </div>
             <div class="form-group">
                 <label id="lop"><b>Job_title</b></label>
@@ -51,11 +85,11 @@
                 <label id="lop"><b>Job_change_id</b></label>
                 <input type="number" name="job_change_id" class="form-control" value="{{old('job_change_id')}}" id="pole">
             </div>
-            <button type="submit" class="btn btn" style="background: blue;color: white;border-radius: 2vh;">
+            <button type="submit" id="save">
                 Save
             </button>
-
+            <a href="{{route('employees.index')}}" class="btn btn " id="back">Back</a>
         </form>
-        <a href="{{route('employees.index')}}" class="btn btn mt-3" id="back">Back</a>
+
 
 @endsection

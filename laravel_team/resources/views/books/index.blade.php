@@ -1,26 +1,58 @@
 @extends('layouts_.app')
 @section('content')
-    <h1 id="hh"><b>Book List</b></h1>
+    <style>
+
+        #hh{
+            color: darkblue;}
+        #add{
+            color: white;
+            background-color: #2424b1;
+            border-radius: 2vh;
+            font-size: 16px;
+            border: 2px solid transparent;
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+            width: 17vh; height: 6vh;}
+        #add:hover{
+            background-color: white !important; color: darkblue;
+            border-color: darkblue;}
+        #th{
+            color: darkblue}
+        #td{
+            color: black;}
+        #show{background: #5d5757;
+            color: white;
+            width: 13vh;
+            border-radius: 2vh;}
+        #show:hover{
+            background-color: white;
+            color: grey; border-color: #575454;}
+        #edit{background: darkgoldenrod;
+            color: white;
+            border-radius: 2vh;
+            width: 13vh;
+            font-size: 16px;
+            text-align: center}
+        #edit:hover{
+            background-color: white;
+            color: darkgoldenrod;
+            border-color: darkgoldenrod;}
+        #delete{
+            background: #970a0a;
+            color: white;
+            border-radius: 2vh;
+            width: 13vh;
+        }
+        #delete:hover{
+            background-color: white;
+            color: darkred;
+            border-color: darkred;
+        }
+    </style>
+        <h1 id="hh"><b>Book List</b></h1>
     <a href="{{ route('books.create') }}" class="btn btn" id="add"><b>Add Book</b></a>
     @if (session('success'))
         <div class="alert alert-success">{{ session('success')}}</div>
     @endif
-
-    <style>
-
-        #hh{color: darkblue;}
-        #add{color: white;background: blue;border-radius: 2vh;}
-        #th{color: darkblue}
-        #td{color: black;}
-        #show{background: grey;color: white;border-radius: 2vh;}
-        #edit{background: #fac737;color: black;border-radius: 2vh;width: 13vh;}
-        #delete{background: red;color: white;border-radius: 2vh;}
-
-
-
-    </style>
-
-
     <table class="table table-bordered">
         <thead>
         <tr>
@@ -46,16 +78,17 @@
                 <td id="td"><b>{{$book->description}}</b></td>
                 <td id="td"><b>{{$book->image}}</b></td>
                 <td>
-                    <a href="{{route('books.show',$book)}}" class="btn btn" id="show"><b>Show</b></a>
-                    <a href="{{ route('books.edit',$book) }}" class="btn btn" id="edit"><b>Edit</b></a>
+                    <a href="{{route('books.show',$book)}}" class="btn btn mt-3" id="show"><b>Show</b></a></td>
+                  <td>  <a href="{{ route('books.edit',$book) }}" class="btn btn mt-3" id="edit"><b>Edit</b></a>
                     <form action="{{route('books.destroy', $book) }}" method="POST" style="display: inline-block;">
                         @csrf
                         @method('DELETE')
-                        <button type="submit" class="btn btn" id="delete"><b>Delete</b></button>
+                        <button type="submit" class="btn btn mt-3" id="delete"><b>Delete</b></button>
                     </form>
                 </td>
 
             </tr>
+
         @endforeach
         </tbody>
     </table>
