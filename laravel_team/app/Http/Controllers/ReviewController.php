@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Book;
 use App\Models\Review;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class ReviewController extends Controller
@@ -21,7 +23,9 @@ class ReviewController extends Controller
      */
     public function create()
     {
-        return view('reviews.create');
+        $users = User::all();
+        $books = Book::all();
+        return view('reviews.create',compact('books','users'));
     }
 
     /**
@@ -51,7 +55,9 @@ class ReviewController extends Controller
      */
     public function edit(Review $review)
     {
-        return view('reviews.edit', compact('review'));
+        $users = User::all();
+        $books = Book::all();
+        return view('reviews.edit', compact('review','books','users'));
     }
 
     /**

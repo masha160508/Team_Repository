@@ -42,7 +42,7 @@
             border-color: #575454;
         }
     </style>
-    <h1 id="hh"><b>Edit Book</b></h1>
+    <h1 id="hh"><b>Edit</b></h1>
     @if($errors->any())
         <div class="alert alert-danger">
             <ul>
@@ -62,15 +62,22 @@
         </div>
         <div class="form-group">
             <label id="lop"><b>Language_id</b></label>
-            <input type="number" name="language_id" class="form-control" id="pole" value="{{old('language_id',$book->language_id)}}">
-        </div>
+            <select name="language_id" class="form-control" id="pole">
+                @foreach($languages as $language)
+                    <option value="{{$language->id}}">{{$language->name}}</option>
+                @endforeach
+            </select> </div>
         <div class="form-group">
             <label id="lop"><b>Author</b></label>
             <input type="text" name="author" class="form-control" id="pole" value="{{old('author',$book->author)}}">
         </div>
         <div class="form-group">
             <label id="lop"><b>Category_id</b></label>
-            <input type="number" name="category_id" class="form-control" id="pole" value="{{old('category_id',$book->category_id)}}">
+            <select name="category_id" class="form-control" id="pole">
+                @foreach($categories as $category)
+                    <option value="{{$category->id}}">{{$category->name}}</option>
+                @endforeach
+            </select>
         </div>
         <div class="form-group">
             <label id="lop"><b>Publication_Date</b></label>

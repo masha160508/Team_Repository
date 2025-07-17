@@ -2,45 +2,43 @@
 
 @section('content')
     <style>
-        #hh{color: darkblue;}
+        #hh{color: #6f42c1;}
         #pole{width: 50vh;border-radius: 2vh;color: darkblue;}
         #pole:hover{
             background-color: white !important;
-            color: darkblue;
-            border-color: darkblue;
-            box-shadow: 0 0 20px rgba(0, 14, 139, 0.86);
+            color: blueviolet;
+            box-shadow: 0 0 20px blueviolet;
         }
-        #lop{color: black;}
+        #lop{color: darkslateblue;}
         #back{border-radius: 2vh;
             background: grey;
             color: white;
-            width: 9.7vh;
-            height: 6vh;
+            width: 13vh;
+            height: 6.5vh;
             font-size: 16px;
             text-align: center
         }
         #back:hover{
             background-color: white;
             color: grey;
-            border-color: #575454;
+            box-shadow: 0 0 20px #6e6969 !important;
         }
         #save {
-            border-radius: 2vh;
-            background-color: darkblue;
+            border-radius: 1.5vh;
+            background-color: #6f42c1;
             font-size: 16px;
             color: white;
             border: 2px solid transparent;
-            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-            width: 10vh;
-            height: 6vh;
+            width: 13vh;
+            height: 6.5vh;
         }
 
         #save:hover {
             background-color: white !important;
-            color: darkblue;
-            border-color: darkblue;
-            box-shadow: 0 0 20px darkblue;
-        }
+            color: #6f42c1;
+            box-shadow: 0 0 20px #4d239a;
+           }
+
     </style>
     <h1 id="hh"><b>Add New User</b></h1>
 @if($errors->any())
@@ -68,7 +66,7 @@
         </div>
 
         <button type="submit" id="save">
-            Save
+            <b>  Save </b>
         </button>
         <a href="{{route('users.index')}}" class="btn btn" id="back">Back</a>
     </form>

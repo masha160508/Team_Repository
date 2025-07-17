@@ -23,8 +23,9 @@ class EmployeeController extends Controller
      */
     public function create()
     {
+        $jobChanges = JobChange::all();
         $job_change = JobChange::all();
-        return view('employees.create',compact('job_change'));
+        return view('employees.create',compact('jobChanges'));
     }
 
     /**
@@ -58,7 +59,8 @@ class EmployeeController extends Controller
      */
     public function edit(Employee $employee)
     {
-        return view('employees.edit',compact('employee'));
+        $jobChanges = JobChange::all();
+        return view('employees.edit',compact('employee','jobChanges'));
     }
 
     /**

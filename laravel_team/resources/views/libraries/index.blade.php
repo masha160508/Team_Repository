@@ -1,19 +1,22 @@
 @extends('layouts_.app')
 @section('content')
     <style>
+
+        #hh{
+            color: #6f42c1;}
         #add{
             color: white;
-            background-color: #2424b1;
-            border-radius: 2vh;
+            background-color: blue;
+            border-radius: 1.5vh;
             font-size: 16px;
             border: 2px solid transparent;
             transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-            width: 20vh; height: 6vh;}
+            width: 20vh; height: 6.5vh;}
         #add:hover{
             background-color: white !important; color: darkblue;
-            border-color: darkblue;}
+            box-shadow:0 0 15px blue!important; }
         #th{
-            color: darkblue}
+            color: darkslateblue;}
         #td{
             color: black;}
         #show{background: #5d5757;
@@ -22,8 +25,9 @@
             border-radius: 2vh;}
         #show:hover{
             background-color: white;
-            color: grey; border-color: #575454;}
-        #edit{background: darkgoldenrod;
+            color: grey;
+            box-shadow: 0 0 20px darkslategrey !important;}
+        #edit{background:orange;
             color: white;
             border-radius: 2vh;
             width: 13vh;
@@ -31,25 +35,26 @@
             text-align: center}
         #edit:hover{
             background-color: white;
-            color: darkgoldenrod;
-            border-color: darkgoldenrod;}
+            color: orange;
+            box-shadow: 0 0 17px orange !important;}
         #delete{
-            background: #970a0a;
+            background: red;
             color: white;
             width: 13vh;
             border-radius: 2vh;}
         #delete:hover{
             background-color: white;
-            color: darkred;
-            border-color: darkred;
+            color: red;
+            box-shadow: 0 0 15px red !important;
         }
+
     </style>
 
     <div class="container">
-        <h1 style="color:darkblue">Library List</h1>
+        <h1 id="hh">Library List</h1>
 
-        <a href="{{ route('libraries.create') }}" class="btn btn" id="add">Add New Library</a><br>
-        <table class="table table-bordered">
+        <a href="{{ route('libraries.create') }}" class="btn btn" id="add"><b>Add Library</b></a><br>
+        <table class="table table-hover">
             <thead>
             <tr>
                 <th id="th">#</th>

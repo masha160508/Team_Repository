@@ -252,13 +252,14 @@
                     </a>
                     <ul aria-expanded="false">
                         <li><a href="{{route('users.index')}}" aria-expanded="false">Users</a></li>
-                        <li><a href="{{route('libraries.index')}}" aria-expanded="false">Libraries</a></li>
-                        <li><a href="{{route('employees.index')}}" aria-expanded="false">Employees</a></li>
+                        <li><a href="{{route('libraries.index')}}" aria-expanded="false">Library</a></li>
                         <li><a href="{{route('jobChanges.index')}}" aria-expanded="false">JobChanges</a></li>
+                        <li><a href="{{route('employees.index')}}" aria-expanded="false">Employees</a></li>
                         <li><a href="{{route('languages.index')}}" aria-expanded="false">Languages</a></li>
                         <li><a href="{{route('category.index')}}" aria-expanded="false">Categories</a></li>
                         <li><a href="{{route('books.index')}}" aria-expanded="false">Books</a></li>
                         <li><a href="{{route('reviews.index')}}" aria-expanded="false">Reviews</a></li>
+                        <li><a href="{{route('authors.index')}}" aria-expanded="false">Author</a></li>
                     </ul>
                 </li>
 

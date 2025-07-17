@@ -11,7 +11,7 @@
             font-size: 16px;
             border: 2px solid transparent;
             transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-            width: 17vh; height: 6vh;}
+            width: 20vh; height: 6vh;}
         #add:hover{
             background-color: white !important; color: darkblue;
             border-color: darkblue;}
@@ -26,7 +26,7 @@
         #show:hover{
             background-color: white;
             color: grey; border-color: #575454;}
-        #edit{background: darkgoldenrod;
+        #edit{background: orange    ;
             color: white;
             border-radius: 2vh;
             width: 13vh;
@@ -34,18 +34,18 @@
             text-align: center}
         #edit:hover{
             background-color: white;
-            color: darkgoldenrod;
-            border-color: darkgoldenrod;}
+            color: orange;
+            border-color: darkorange;}
         #delete{
-            background: #970a0a;
+            background: red;
             color: white;
             border-radius: 2vh;
             width: 13vh;
         }
         #delete:hover{
             background-color: white;
-            color: darkred;
-            border-color: darkred;
+            color: red;
+            border-color: red;
         }
     </style>
         <h1 id="hh"><b>Book List</b></h1>
@@ -78,8 +78,8 @@
                 <td id="td"><b>{{$book->description}}</b></td>
                 <td id="td"><b>{{$book->image}}</b></td>
                 <td>
-                    <a href="{{route('books.show',$book)}}" class="btn btn mt-3" id="show"><b>Show</b></a></td>
-                  <td>  <a href="{{ route('books.edit',$book) }}" class="btn btn mt-3" id="edit"><b>Edit</b></a>
+                    <a href="{{route('books.show',$book)}}" class="btn btn mt-3" id="show"><b>Show</b></a>
+                   <a href="{{ route('books.edit',$book) }}" class="btn btn mt-3" id="edit"><b>Edit</b></a>
                     <form action="{{route('books.destroy', $book) }}" method="POST" style="display: inline-block;">
                         @csrf
                         @method('DELETE')
