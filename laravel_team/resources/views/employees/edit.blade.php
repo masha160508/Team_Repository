@@ -86,8 +86,11 @@
             </div>
             <div class="form-group">
                 <label id="lop"><b>Job_change_id</b></label>
-                <input type="number" name="job_change_id" class="form-control"
-                       value="{{old('job_change_id', $employee->job_change_id)}}" id="pole">
+                <select name="jobChange_id" class="form-control" id="pole">
+                    @foreach($jobChanges as $jobChange)
+                        <option value="{{$jobChange->id}}">от  {{$jobChange->start_time}}   до   {{$jobChange->end_time}}</option>
+                    @endforeach
+                </select>
             </div>
 
             <button type="submit"  id="up">

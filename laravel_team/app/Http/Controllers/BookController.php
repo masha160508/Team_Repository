@@ -30,7 +30,9 @@ public function search(Request $request,TeamRepositoryInterfaces $teamRepository
      */
     public function create()
     {
-       return view('books.create');
+        $languages = Language::all();
+        $categories = Category::all();
+       return view('books.create',compact('languages','categories'));
     }
 
     /**
@@ -65,7 +67,9 @@ public function search(Request $request,TeamRepositoryInterfaces $teamRepository
      */
     public function edit(Book $book)
     {
-        return view('books.edit', compact('book'));
+        $languages = Language::all();
+        $categories = Category::all();
+        return view('books.edit', compact('book','languages','categories'));
     }
 
     /**
@@ -95,8 +99,4 @@ public function search(Request $request,TeamRepositoryInterfaces $teamRepository
         return redirect()->route('books.index');
     }
 
-    public function favourite(Book $book)
-    {
-        return view('books.favourite', compact('book'));
-    }
 }

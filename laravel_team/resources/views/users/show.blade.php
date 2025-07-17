@@ -1,25 +1,25 @@
 @extends('layouts_.app')
 @section('content')
     <style>
-        #th{color: black;}
+        #th{color:black ;}
         #td{color: #550655}
-        #hh{color: darkblue;}
+        #hh{color: #6f42c1;}
         #back{border-radius: 2vh;
             background: grey;
             color: white;
-            width: 9.7vh;
-            height: 5.9vh;
+            width: 13vh;
+            height: 6.5vh;
             font-size: 16px;
             text-align: center
         }
         #back:hover{
             background-color: white;
             color: grey;
-            border-color: #575454;
+            box-shadow: 0 0 20px #6e6969 !important;
         }
     </style>
-    <h1 id="hh">Show User</h1>
-    <table class="table">
+    <h1 id="hh"><b>Show User</b></h1>
+    <table class="table table-striped">
         <tr>
             <td id="th"><b>Name</b></td>
             <td id="td"><b>{{$user->name}}</b></td>

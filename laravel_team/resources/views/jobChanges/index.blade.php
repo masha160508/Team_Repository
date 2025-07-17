@@ -11,7 +11,7 @@
             font-size: 16px;
             border: 2px solid transparent;
             transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-            width: 20vh; height: 6vh;}
+            width: 25vh; height: 6vh;}
         #add:hover{
             background-color: white !important; color: darkblue;
             border-color: darkblue;}
@@ -26,7 +26,7 @@
         #show:hover{
             background-color: white;
             color: grey; border-color: #575454;}
-        #edit{background: darkgoldenrod;
+        #edit{background: orange;
             color: white;
             border-radius: 2vh;
             width: 13vh;
@@ -34,17 +34,17 @@
             text-align: center}
         #edit:hover{
             background-color: white;
-            color: darkgoldenrod;
-            border-color: darkgoldenrod;}
+            color: orange;
+            border-color: darkorange;}
         #delete{
-            background: #970a0a;
+            background: red;
             color: white;
             width: 13vh;
             border-radius: 2vh;}
         #delete:hover{
             background-color: white;
-            color: darkred;
-            border-color: darkred;
+            color: red;
+            border-color: red;
         }
     </style>
         <h1 id="hh"><b>JobChange List</b></h1>

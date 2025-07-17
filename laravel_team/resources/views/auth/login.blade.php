@@ -47,7 +47,7 @@
         <div class="card login-form" style="height: 70vh;width: 125vh;">
             <div class="row justify-content-center h-100">
 
-<form action="{{route('login')}}" method="post">
+<form action="{{route('login')}}" method="post" style="margin-top: 7vh;">
     <h1 id="hh">Login</h1>
     @csrf
     <label id="lop">Email-address:</label>
@@ -57,6 +57,9 @@
     <button type="submit"  id="save">
         log in
     </button>
+    <a href="{{route('welcome')}}" class="btn btn" id="back">
+        Back
+    </a>
 
 </form>
 

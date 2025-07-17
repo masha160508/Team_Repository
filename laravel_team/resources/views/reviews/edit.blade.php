@@ -58,11 +58,19 @@
         @method('PUT')
         <div class="for-group">
             <label id="lop">User_id</label>
-            <input type="number" name="user_id" id="pole" class="form-control" value="{{old('user_id',$review->user_id)}}">
+            <select name="user_id" class="form-control" id="pole">
+                @foreach($users as $user)
+                    <option value="{{$user->id}}">{{$user->name}}</option>
+                @endforeach
+            </select>
         </div>
         <div class="for-group">
             <label id="lop">Book_id</label>
-            <input type="number" name="book_id" id="pole" class="form-control" value="{{old('book_id',$review->book_id)}}">
+            <select name="book_id" class="form-control" id="pole">
+                @foreach($books as $book)
+                    <option value="{{$book->id}}">{{$book->title}}</option>
+                @endforeach
+            </select>
         </div>
         <div class="form-group">
             <label id="lop">Commentary</label>
@@ -71,5 +79,7 @@
         <button type="submit"  id="up">
             Update
         </button>
-    </form><a href="{{route('reviews.index')}}" class="btn btn" id="back">Back</a>
+        <a href="{{route('reviews.index')}}" class="btn btn" id="back">Back</a>
+    </form>
+
 @endsection

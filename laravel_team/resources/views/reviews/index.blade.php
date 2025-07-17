@@ -26,7 +26,7 @@
         #show:hover{
             background-color: white;
             color: grey; border-color: #575454;}
-        #edit{background: darkgoldenrod;
+        #edit{background: orange;
             color: white;
             border-radius: 2vh;
             width: 13vh;
@@ -34,17 +34,17 @@
             text-align: center}
         #edit:hover{
             background-color: white;
-            color: darkgoldenrod;
-            border-color: darkgoldenrod;}
+            color: orange;
+            border-color: darkorange;}
         #delete{
-            background: #970a0a;
+            background: red;
             color: white;
             width: 13vh;
             border-radius: 2vh;}
         #delete:hover{
             background-color: white;
-            color: darkred;
-            border-color: darkred;
+            color: red;
+            border-color: red;
         }
     </style>
     <h1 id="hh">Review List</h1>
