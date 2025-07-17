@@ -59,7 +59,11 @@
         </div>
         <div class="form-group">
             <label id="lop"><b>Language_id:</b></label>
-            <input type="number" name="language_id" id="pole" class="form-control" value="{{ old('language_id') }}">
+            <select name="language_id" class="form-control" id="pole">
+                @foreach($languages as $language)
+                    <option value="{{$language->id}}">{{$language->name}}</option>
+                @endforeach
+            </select>
         </div>
         <div class="form-group">
             <label id="lop"><b>Author:</b></label>
@@ -67,8 +71,12 @@
         </div>
         <div class="form-group">
             <label id="lop"><b>Category_id:</b></label>
-            <input type="number" name="category_id" id="pole" class="form-control" value="{{old('category_id')}}">
-        </div>
+            <select name="category_id" class="form-control" id="pole">
+                @foreach($categories as $category)
+                    <option value="{{$category->id}}">{{$category->name}}</option>
+                @endforeach
+            </select>
+            </div>
         <div class="form-group">
             <label id="lop"><b>Publication_Date:</b></label>
             <input type="date" name="publication_date" id="pole" class="form-control" value="{{old('publication_date')}}">

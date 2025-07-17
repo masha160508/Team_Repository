@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthorController;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\EmployeeController;
@@ -13,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('welcome');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -35,6 +36,7 @@ Route::resource('languages', LanguageController::class);
 Route::resource('libraries', LibraryController::class);
 Route::resource('jobChanges', JobChangeController::class);
 Route::resource('employees', EmployeeController::class);
+Route::resource('authors', AuthorController::class);
 
 Route::get('search', [BookController::class, 'search'])->name('search');
 

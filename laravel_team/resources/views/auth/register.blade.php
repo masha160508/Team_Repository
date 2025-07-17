@@ -69,7 +69,7 @@
         <button type="submit" id="save">
             <b>    Save   </b>
         </button>
-        <a href="{{''}}" class="btn btn " id="back">
+        <a href="{{route('welcome')}}" class="btn btn " id="back">
             <b>Back</b>
         </a>
 
