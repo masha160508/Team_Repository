@@ -260,9 +260,9 @@
                         <li><a href="{{route('category.index')}}" aria-expanded="false">Categories</a></li>
                         <li><a href="{{route('books.index')}}" aria-expanded="false">Books</a></li>
                         <li><a href="{{route('reviews.index')}}" aria-expanded="false">Reviews</a></li>
+                        <li><a href="{{route('authors.index')}}" aria-expanded="false">Author</a></li>
                     </ul>
                 </li>
-
         </div>
     </div>
     <!--**********************************
