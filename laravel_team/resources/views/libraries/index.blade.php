@@ -76,8 +76,8 @@
                     <td id="td"><b>{{ $library->count_books }}</b></td>
 
                     <td>
-                        <a href="{{ route('libraries.show',$library) }}" id="show" class="btn btn" ><b>Show</b></a>
-                        <a href="{{ route('libraries.edit',$library) }}" id="edit" class="btn btn" ><b>Edit</b></a>
+                        <a href="{{ route('libraries.show',$library) }}" id="show" class="btn btn" ><b>Show</b></a></td><td>
+                        <a href="{{ route('libraries.edit',$library) }}" id="edit" class="btn btn" ><b>Edit</b></a></td><td>
                         <form action="{{route('libraries.destroy', $library) }}" method="POST"
                               style="display: inline-block;">
                             @csrf

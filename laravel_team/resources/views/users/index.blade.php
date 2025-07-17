@@ -4,17 +4,6 @@
 
         #hh{
             color: #6f42c1;}
-        #add{
-            color: white;
-            background-color: blue;
-            border-radius: 1.5vh;
-            font-size: 16px;
-            border: 2px solid transparent;
-            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-            width: 20vh; height: 6.5vh;}
-        #add:hover{
-            background-color: white !important; color: darkblue;
-            box-shadow:0 0 15px blue!important; }
         #th{
             color: darkslateblue;}
         #td{
@@ -49,7 +38,6 @@
         }
     </style>
     <h1 id="hh"><b>User List</b></h1>
-    <a href="{{route('users.create')}}" class="btn btn" id="add"><b>Add User</b></a>
     @if(session('success'))
         <div class="alert alert-success">
             {{session('success')}}

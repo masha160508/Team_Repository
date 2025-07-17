@@ -3,20 +3,20 @@
     <style>
 
         #hh{
-            color: darkblue;}
+            color: #6f42c1;}
         #add{
             color: white;
-            background-color: #2424b1;
-            border-radius: 2vh;
+            background-color: blue;
+            border-radius: 1.5vh;
             font-size: 16px;
             border: 2px solid transparent;
             transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-            width: 25vh; height: 6vh;}
+            width: 20vh; height: 6.5vh;}
         #add:hover{
             background-color: white !important; color: darkblue;
-            border-color: darkblue;}
+            box-shadow:0 0 15px blue!important; }
         #th{
-            color: darkblue}
+            color: darkslateblue;}
         #td{
             color: black;}
         #show{background: #5d5757;
@@ -25,8 +25,9 @@
             border-radius: 2vh;}
         #show:hover{
             background-color: white;
-            color: grey; border-color: #575454;}
-        #edit{background: orange;
+            color: grey;
+            box-shadow: 0 0 20px darkslategrey !important;}
+        #edit{background:orange;
             color: white;
             border-radius: 2vh;
             width: 13vh;
@@ -35,7 +36,7 @@
         #edit:hover{
             background-color: white;
             color: orange;
-            border-color: darkorange;}
+            box-shadow: 0 0 17px orange !important;}
         #delete{
             background: red;
             color: white;
@@ -44,7 +45,7 @@
         #delete:hover{
             background-color: white;
             color: red;
-            border-color: red;
+            box-shadow: 0 0 15px red !important;
         }
     </style>
         <h1 id="hh"><b>JobChange List</b></h1>
@@ -57,7 +58,7 @@
 
         @endif
 
-        <table class="table table-bordered">
+        <table class="table table-hover">
             <thead>
             <tr>
                 <th id="th"><b>#</b></th>
@@ -72,8 +73,8 @@
                     <td id="td"><b>{{$jobChange->start_time}}</b></td>
                     <td id="td"><b>{{$jobChange->end_time}}</b></td>
                     <td>
-                        <a href="{{route('jobChanges.show',$jobChange)}}" id="show" class="btn btn">Show</a>
-                        <a href="{{route('jobChanges.edit',$jobChange)}}" id="edit" class="btn btn">Edit</a>
+                        <a href="{{route('jobChanges.show',$jobChange)}}" id="show" class="btn btn">Show</a></td><td>
+                        <a href="{{route('jobChanges.edit',$jobChange)}}" id="edit" class="btn btn">Edit</a></td><td>
                         <form action="{{route('jobChanges.destroy',$jobChange)}}"  method="post"
                               style="display: inline-block;">
                             @csrf
