@@ -47,9 +47,15 @@ public function search(Request $request,TeamRepositoryInterfaces $teamRepository
             'category_id' => 'required|exists:categories,id',
             'publication_date' => 'required|date',
             'description' => 'required',
-            'image' => 'required',
-
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'src'=>'required|file|mimetypes:application/pdf|max:2048',
         ]);
+        if ($request->hasFile('image')) {
+            $validated ['image'] = $request->file('image')->store('books','public');
+        }
+        if ($request->hasFile('src')) {
+            $validated ['src'] = $request->file('src')->store('books','public');
+        }
         Book::create($validated);
         return redirect()->route('books.index');
     }
@@ -84,8 +90,15 @@ public function search(Request $request,TeamRepositoryInterfaces $teamRepository
            'category_id' => 'required|exists:categories,id',
            'publication_date' => 'required|date',
            'description' => 'required',
-            'image' => 'required',
+           'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'src'=>'required|file|mimetypes:application/pdf|max:2048',
         ]);
+        if ($request->hasFile('image')) {
+            $validated ['image'] = $request->file('image')->store('books','public');
+        }
+        if ($request->hasFile('src')) {
+            $validated ['src'] = $request->file('src')->store('books','public');
+        }
         $book->update($validated);
         return redirect()->route('books.index');
     }

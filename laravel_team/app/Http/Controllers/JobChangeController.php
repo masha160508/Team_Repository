@@ -13,7 +13,7 @@ class JobChangeController extends Controller
     public function index()
     {
         $jobChanges = JobChange::all();
-        return view('jobChanges.index', compact('jobChanges'));
+        return view('job_changes.index', compact('jobChanges'));
     }
 
     /**
@@ -21,7 +21,7 @@ class JobChangeController extends Controller
      */
     public function create()
     {
-        return view('jobChanges.create');
+        return view('job_changes.create');
     }
 
     /**
@@ -36,7 +36,7 @@ class JobChangeController extends Controller
 
         JobChange::create($validated);
 
-        return redirect()->route('jobChanges.index');
+        return redirect()->route('job_changes.index');
     }
 
 
@@ -45,7 +45,7 @@ class JobChangeController extends Controller
      */
     public function show(JobChange $jobChange)
     {
-        return view('jobChanges.show', compact('jobChange'));
+        return view('job_changes.show', compact('jobChange'));
     }
 
     /**
@@ -53,7 +53,7 @@ class JobChangeController extends Controller
      */
     public function edit(JobChange $jobChange)
     {
-        return view('jobChanges.edit', compact('jobChange'));
+        return view('job_changes.edit', compact('jobChange'));
     }
 
     /**
@@ -68,7 +68,7 @@ class JobChangeController extends Controller
 
         $jobChange->update($validated);
 
-        return redirect()->route('jobChanges.index');
+        return redirect()->route('job_changes.index');
     }
 
     /**
@@ -77,6 +77,6 @@ class JobChangeController extends Controller
     public function destroy(JobChange $jobChange)
     {
         $jobChange->delete();
-        return redirect()->route('jobChanges.index');
+        return redirect()->route('job_changes.index');
     }
 }

@@ -49,7 +49,7 @@
         }
     </style>
         <h1 id="hh"><b>JobChange List</b></h1>
-        <a href="{{route('jobChanges.create')}}" class="btn btn" id="add"><b>Add JobChange</b></a><br><br>
+        <a href="{{route('job_changes.create')}}" class="btn btn" id="add"><b>Add JobChange</b></a><br><br>
 
         @if(session('success'))
             <div class="alert alert-success">
@@ -73,9 +73,9 @@
                     <td id="td"><b>{{$jobChange->start_time}}</b></td>
                     <td id="td"><b>{{$jobChange->end_time}}</b></td>
                     <td>
-                        <a href="{{route('jobChanges.show',$jobChange)}}" id="show" class="btn btn">Show</a></td><td>
-                        <a href="{{route('jobChanges.edit',$jobChange)}}" id="edit" class="btn btn">Edit</a></td><td>
-                        <form action="{{route('jobChanges.destroy',$jobChange)}}"  method="post"
+                        <a href="{{route('job_changes.show',$jobChange)}}" id="show" class="btn btn">Show</a></td><td>
+                        <a href="{{route('job_changes.edit',$jobChange)}}" id="edit" class="btn btn">Edit</a></td><td>
+                        <form action="{{route('job_changes.destroy',$jobChange)}}"  method="post"
                               style="display: inline-block;">
                             @csrf
                             @method('DELETE')

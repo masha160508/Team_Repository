@@ -49,7 +49,7 @@
             </ul>
         </div>
     @endif
-    <form action="{{ route('books.store') }}" method="POST">
+    <form action="{{ route('books.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="form-group">
             <label id="lop"><b>Title:</b></label>
@@ -85,7 +85,11 @@
         </div>
         <div class="form-group">
             <label id="lop"><b>Image:</b></label>
-            <input type="text" name="image" id="pole" class="form-control" value="{{old('image')}}">
+            <input type="file" name="image" id="pole" class="form-control" value="{{old('image')}}">
+        </div>
+        <div class="form-group">
+        <label for="" id="lop">Src</label>
+        <input type="file" name="src"  id="pole" class="form-control" value="{{old('file')}}">
         </div>
         <button type="submit"  id="save">
             <b>    Save   </b>

@@ -64,6 +64,7 @@
             <th id="th">Publication_Date</th>
             <th id="th">Description</th>
             <th id="th">Image</th>
+            <th id="th">Src</th>
         </tr>
         </thead>
         <tbody>
@@ -76,10 +77,13 @@
                 <td id="td"><b>{{$book->category->name}}</b></td>
                 <td id="td"><b>{{$book->publication_date}}</b></td>
                 <td id="td"><b>{{$book->description}}</b></td>
-                <td id="td"><b>{{$book->image}}</b></td>
+                <td id="td"><a href="{{asset('storage/'. $book->image)}}" target="_blank">
+                    <img src="{{asset('storage/'. $book->image)}}" alt=""></a>
+                </td>
+                <td id="td"><a href="{{asset('storage/'. $book->src)}}" target="_blank"><b>{{$book->src}}</b></a></td>
                 <td>
-                    <a href="{{route('books.show',$book)}}" class="btn btn mt-3" id="show"><b>Show</b></a></td><td>
-                    <a href="{{ route('books.edit',$book) }}" class="btn btn mt-3" id="edit"><b>Edit</b></a></td><td>
+                    <a href="{{route('books.show',$book)}}" class="btn btn mt-3" id="show"><b>Show</b></a>
+                    <a href="{{ route('books.edit',$book) }}" class="btn btn mt-3" id="edit"><b>Edit</b></a>
                     <form action="{{route('books.destroy', $book) }}" method="POST" style="display: inline-block;">
                         @csrf
                         @method('DELETE')

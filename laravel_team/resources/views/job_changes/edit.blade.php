@@ -51,7 +51,7 @@
             </div>
 
         @endif
-        <form action="{{route('jobChanges.update',$jobChange)}}" method="post">
+        <form action="{{route('job_changes.update',$jobChange)}}" method="post">
             @csrf
             @method('PUT')
             <div class="form-group">
@@ -68,7 +68,7 @@
             <button type="submit"  id="up">
                 <b> Update </b>
             </button>
-            <a href="{{route('jobChanges.index')}}" class="btn btn " id="back">Back</a>
+            <a href="{{route('job_changes.index')}}" class="btn btn " id="back">Back</a>
 
         </form>
 
