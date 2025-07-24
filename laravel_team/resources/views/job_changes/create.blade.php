@@ -51,7 +51,7 @@
 
         @endif
 
-        <form action="{{route('jobChanges.store')}}" method="post">
+        <form action="{{route('job_changes.store')}}" method="post">
             @csrf
             <div class="form-group">
                 <label id="lop"><b>Start_time</b></label>
@@ -64,7 +64,7 @@
             <button type="submit" id="save">
                 Save
             </button>
-            <a href="{{route('jobChanges.index')}}" class="btn btn " id="back">Back</a>
+            <a href="{{route('job_changes.index')}}" class="btn btn " id="back">Back</a>
 
         </form>
 @endsection

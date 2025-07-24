@@ -37,19 +37,6 @@
             color: #6f42c1;
             box-shadow: 0 0 20px #4d239a;
         }
-        #select{
-            border: 1px solid white;
-            height: 7vh;
-            width: 50vh;
-            border-radius: 2vh;
-            color: darkblue;
-        }
-        #select:hover{
-            color: #6f42c1;
-            box-shadow: 0 0 20px blueviolet !important;
-            border: 1px solid white;
-        }
-
     </style>
     <div class="container">
         <h1 id="hh">Add New Employee</h1>

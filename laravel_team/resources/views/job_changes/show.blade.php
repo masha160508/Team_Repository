@@ -29,5 +29,5 @@
             <td id="td"><b>{{$jobChange->end_time}}</b></td>
         </tr>
     </table>
-    <a class="btn btn " href="{{route('jobChanges.index')}}" id="back">Back</a>
+    <a class="btn btn " href="{{route('job_changes.index')}}" id="back">Back</a>
 @endsection
