@@ -2,44 +2,42 @@
 @section('content')
     <style>
 
-        #hh{color: darkblue;}
-        #lop{color: black   ;}
-        #pole{width: 50vh;border-radius: 2vh;color: darkblue;}
+        #hh{color: #fac737;}
+        #lop{color: #fac737;}
+        #pole{width: 50vh;border-radius: 2vh;color: black;}
         #pole:hover{
-            color: darkblue;
-            border-color: darkgoldenrod;
-            box-shadow: 0 0 20px darkgoldenrod;
+            color: orange;
+            box-shadow: 0 0 20px #fac737;
         }
         #up{
             border-radius: 2vh;
-            background-color: #d7a52b;
-            font-size: 16px;
+            background: #fac737;
             color: white;
-            border: 2px solid transparent;
-            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
             width: 15vh;
-            height: 6vh;
+            height: 6.5vh;
+            font-size: 16px;
+            text-align: center;
+            border:  #fac737;
         }
+        #up:hover{
+            background-color: white;
+            color: #fac737;
+            box-shadow: 0 0 20px orange !important
 
-        #up:hover {
-            background-color: white !important;
-            color: darkgoldenrod;
-            border-color: darkgoldenrod;
-            box-shadow: 0 0 20px darkgoldenrod;
         }
 
         #back{border-radius: 2vh;
             background: grey;
             color: white;
             width: 15vh;
-            height: 6vh;
+            height: 6.5vh;
             font-size: 16px;
             text-align: center
         }
         #back:hover{
             background-color: white;
             color: grey;
-            border-color: #575454;
+            box-shadow: 0 0 20px #6e6969 !important;
         }
     </style>
         <h1 id="hh"><b>Edit</b></h1>
@@ -53,7 +51,7 @@
             </div>
 
         @endif
-        <form action="{{route('jobChanges.update',$jobChange)}}" method="post">
+        <form action="{{route('job_changes.update',$jobChange)}}" method="post">
             @csrf
             @method('PUT')
             <div class="form-group">
@@ -70,7 +68,7 @@
             <button type="submit"  id="up">
                 <b> Update </b>
             </button>
-            <a href="{{route('jobChanges.index')}}" class="btn btn " id="back">Back</a>
+            <a href="{{route('job_changes.index')}}" class="btn btn " id="back">Back</a>
 
         </form>
 

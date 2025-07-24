@@ -20,6 +20,7 @@ return new class extends Migration
             $table->date('publication_date');
             $table->text('description');
             $table->string('image');
+            $table->string('src');
             $table->timestamps();
         });
     }

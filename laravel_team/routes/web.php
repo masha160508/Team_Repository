@@ -34,7 +34,7 @@ Route::resource('users', UserController::class);
 Route::resource('reviews', ReviewController::class);
 Route::resource('languages', LanguageController::class);
 Route::resource('libraries', LibraryController::class);
-Route::resource('jobChanges', JobChangeController::class);
+Route::resource('job_changes', JobChangeController::class);
 Route::resource('employees', EmployeeController::class);
 Route::resource('authors', AuthorController::class);
 

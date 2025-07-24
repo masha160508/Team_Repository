@@ -1,5 +1,4 @@
 @extends('layouts_.app')
-
 @section('content')
     <style>
         #hh{color: #6f42c1;}
@@ -37,37 +36,35 @@
             background-color: white !important;
             color: #6f42c1;
             box-shadow: 0 0 20px #4d239a;
-           }
+        }
 
     </style>
-    <h1 id="hh"><b>Add New User</b></h1>
-@if($errors->any())
-<div class="alert alert-danger">
-<ul>
-    @foreach($errors->all() as $error)
-        <li>{{$error}}</li>
-    @endforeach
-</ul>
-</div>
-@endif
-    <form action="{{route('users.store')}}" method="post">
-        @csrf
-        <div class="form-group">
-            <label id="lop"><b>Name</b></label>
-            <input type="text" name="name" id="pole" class="form-control" value="{{old('name')}}">
-        </div>
-        <div class="form-group">
-            <label id="lop"><b>Email</b></label>
-            <input type="email" name="email" id="pole" class="form-control" value="{{old('email')}}">
-        </div>
-        <div class="form-group">
-            <label id="lop"><b>Password</b></label>
-            <input type="password" name="password" id="pole" class="form-control" value="{{old('password')}}">
-        </div>
+        <h1 id="hh"><b>Add New JobChange</b></h1>
+        @if($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach($errors->all() as $error)
+                        <li>{{$error}}</li>
+                    @endforeach
+                </ul>
+            </div>
 
-        <button type="submit" id="save">
-            <b>  Save </b>
-        </button>
-        <a href="{{route('users.index')}}" class="btn btn" id="back">Back</a>
-    </form>
-    @endsection
+        @endif
+
+        <form action="{{route('job_changes.store')}}" method="post">
+            @csrf
+            <div class="form-group">
+                <label id="lop"><b>Start_time</b></label>
+                <input type="time" name="start_time" class="form-control" value="{{old('start_time')}}" id="pole">
+            </div>
+            <div class="form-group">
+                <label id="lop"><b>End_time</b></label>
+                <input type="time" name="end_time" class="form-control" value="{{old('end_time')}}" id="pole">
+            </div>
+            <button type="submit" id="save">
+                Save
+            </button>
+            <a href="{{route('job_changes.index')}}" class="btn btn " id="back">Back</a>
+
+        </form>
+@endsection

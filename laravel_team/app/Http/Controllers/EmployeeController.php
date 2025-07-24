@@ -13,9 +13,8 @@ class EmployeeController extends Controller
      */
     public function index()
     {
-        $employees = Employee::with('job_change');
         $employees = Employee::all();
-        return view('employees.index',compact('employees'));
+        return view('employees.index', compact('employees'));
     }
 
     /**
@@ -24,8 +23,7 @@ class EmployeeController extends Controller
     public function create()
     {
         $jobChanges = JobChange::all();
-        $job_change = JobChange::all();
-        return view('employees.create',compact('jobChanges'));
+        return view('employees.create', compact('jobChanges'));
     }
 
     /**
@@ -33,19 +31,20 @@ class EmployeeController extends Controller
      */
     public function store(Request $request)
     {
+ //dd($request->all());
+
         $validated = $request->validate([
             'name' => 'required',
-            'date_of_birth' => 'required',
-            'email' => 'required',
+            'date_of_birth' => 'date',
+            'email' => 'unique:employees,email',
             'address' => 'required',
             'phone' => 'required',
             'job_title' => 'required',
-            'job_change_id' => 'required',
+            'job_change_id' => 'exists:job_changes,id',
         ]);
         Employee::create($validated);
         return redirect()->route('employees.index');
     }
-
     /**
      * Display the specified resource.
      */
